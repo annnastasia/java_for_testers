@@ -31,7 +31,7 @@ public class GroupHelper extends HelperBase {
   public void removeGroup() {
     openGroupsPage();
     selectGroup();
-    removeSelecredGroup();
+    removeSelectedGroup();
     returnToGroupsPage();
   }
 
@@ -52,7 +52,7 @@ public class GroupHelper extends HelperBase {
     click(By.name("new"));
   }
 
-  private void removeSelecredGroup() {
+  private void removeSelectedGroup() {
     click(By.name("delete"));
   }
 
