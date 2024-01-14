@@ -35,13 +35,17 @@ public class TriangleTests {
   }
 
   @Test
-  void cannotCreateTriangleWithNegativeSideBC() {
+  void cannotCreateTriangleWithNegativeSideB() {
     try {
       new Triangle(5.0, -3.0, 4.0);
       Assertions.fail();
-    }catch(IllegalArgumentException exception) {
+    } catch (IllegalArgumentException exception) {
       //OK
     }
+  }
+
+    @Test
+    void cannotCreateTriangleWithNegativeSideC() {
     try {
       new Triangle(3.0, 3.0, -2.0);
       Assertions.fail();
