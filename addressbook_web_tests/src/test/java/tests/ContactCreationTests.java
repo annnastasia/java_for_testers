@@ -30,4 +30,18 @@ public class ContactCreationTests extends TestBase {
     int newContactCount = app.contacts().getCount();
     Assertions.assertEquals(contactCount + 1, newContactCount);
   }
+
+  @Test
+  public void canCreateMultipleContacts() {
+    int n = 2;
+    int contactCount = app.contacts().getCount();
+
+    for(int i = 0; i < n; i++) {
+      app.contacts().createContact(new ContactData().withFieldsFromHP(randomString((i + 1) * 2), randomString(i * 5), "SPb, Nevsky pr., 1" + i, "333-11-22", randomString((i + 1) * 3) + "@email.com"));
+    }
+
+
+    int newContactCount = app.contacts().getCount();
+    Assertions.assertEquals(contactCount + n, newContactCount);
+  }
 }
