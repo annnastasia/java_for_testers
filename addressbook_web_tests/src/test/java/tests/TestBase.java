@@ -29,4 +29,13 @@ public static String randomString(int n) {
     return result;
 }
 
+  public static String randomZifra(int n) {
+    var rndz = new Random();
+    var result = "";
+    for (int i = 0; i < n; i++) {
+      result = result + (char)('0' + rndz.nextInt(9));
+    }
+    return result;
+  }
+
 }
